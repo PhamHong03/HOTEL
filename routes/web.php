@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AmenitiesTypeController;
 use App\Http\Controllers\Admin\MainController;
 use App\Http\Controllers\Admin\RoomController;
 use App\Http\Controllers\Admin\RoomtypeController;
@@ -70,6 +71,17 @@ Route::middleware(['auth'])->group(function () {
             Route::post('edit/{slider}', [SliderController::class, 'update']);
             Route::DELETE('destroy', [SliderController::class, 'destroy']) ;
         });
+
+        #Amenity
+        Route::prefix('amenities')->group(function () {
+            Route::get('add', [AmenitiesTypeController::class, 'create']) ;
+            Route::post('add', [AmenitiesTypeController::class, 'store'])->name('amenity-add');
+            Route::get('list', [AmenitiesTypeController::class, 'index'])->name('amenity-list');
+            Route::get('edit/{amenity}', [AmenitiesTypeController::class, 'show']);
+            Route::post('edit/{amenity}', [AmenitiesTypeController::class, 'update']);
+            Route::DELETE('destroy', [AmenitiesTypeController::class, 'destroy']) ;
+        });
+
 
     });
 

@@ -9,7 +9,7 @@
     <div class="container">
 
         <div class="row">
-            <div class="bread-crumb p-3 " >
+            <div class="bread-crumb p-3" >
                 <a href="/" style="color:#0080C4;">Home
                     <i class="fa-solid fa-angle-right" style="color:#000000;"></i>    
                 </a>
@@ -17,9 +17,7 @@
                     {{ $room->roomtype->name }}
                     <i class="fa-solid fa-angle-right" style="color:#000000;"></i>
                 </a>
-                <a href=""  style="color:#000000;">
-                    {{ $title }}
-                </a>
+                {{ $title }}
             </div> 
         </div>
     </div>
@@ -48,16 +46,21 @@
                 <div class="content__booking content__booking--price-real">
                     <span>Price finally: {!! \App\Helpers\Helper::price_sal($room->price, $room->price_sale) !!}VND/per/night</span>
                 </div>
+                <div class="content__booking content__booking--person">
+                    <span>Max Guest: {!! $room->person !!} guest </span>
+                </div>
                 <div class="content__booking content__booking--quantity">
-                    @if($room->quantity == 0) {
-                        <span>Status: Not available</span>
-                    }
+                    @if($room->quantity == 0) 
+                        <h6 style="color: #DA3C3C">Status: Not available</h6>
+                    @else
+                        <h6 style="color: #DA3C3C">Status: {{ $room->quantity }} room available</h6>
+                    
                     @endif
-                    <h6 style="color: #DA3C3C">Status: {{ $room->quantity }} room available</h6>
+                    
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row mt-5">
             <div class="col-12">
                 <div class="booking__field">
                     <form action=""  class="form">                
@@ -84,7 +87,7 @@
                                 <label for="" class="booking__label">Check in time <span class="" style="color: red"> * </span> </label>
                                 <select id="input_comp-l00xjyes" required="" class="wixui-time-picker__input">
                                     <option value="" disabled="" class="TimePickerDropdown1277584979__dummyOption"></option>
-                                    <option value="00:00">00:00</option>
+                                    <option value="00:00" selected="">00:00</option>
                                     <option value="00:15">00:15</option>
                                     <option value="00:30">00:30</option>
                                     <option value="00:45">00:45</option>
@@ -140,7 +143,7 @@
                                     <option value="13:15">13:15</option>
                                     <option value="13:30">13:30</option>
                                     <option value="13:45">13:45</option>
-                                    <option value="14:00" selected="">14:00</option>
+                                    <option value="14:00" >14:00</option>
                                     <option value="14:15">14:15</option>
                                     <option value="14:30">14:30</option>
                                     <option value="14:45">14:45</option>
@@ -186,7 +189,7 @@
                                 <label for="" class="booking__label">Check out time <span class="" style="color: red"> * </span> </label>
                                 <select id="input_comp-l00xjyf2" required="" class="wixui-time-picker__input">
                                     <option value="" disabled="" class="TimePickerDropdown1277584979__dummyOption"></option>
-                                    <option value="00:00">00:00</option>
+                                    <option value="00:00"  selected="">00:00</option>
                                     <option value="00:15">00:15</option>
                                     <option value="00:30">00:30</option>
                                     <option value="00:45">00:45</option>
@@ -234,7 +237,7 @@
                                     <option value="11:15">11:15</option>
                                     <option value="11:30">11:30</option>
                                     <option value="11:45">11:45</option>
-                                    <option value="12:00" selected="">12:00</option>
+                                    <option value="12:00">12:00</option>
                                     <option value="12:15">12:15</option>
                                     <option value="12:30">12:30</option>
                                     <option value="12:45">12:45</option>
@@ -317,7 +320,11 @@
                             </div>
                         </div>
                         <div class=" d-flex ms-3" style="justify-content: center">   
-                            <input class="btn sesstion__two--button-readmore btn-button-contact" type="submit" value="BOOKING">
+                            @if($room->quantity == 0)
+                                <input class="btn sesstion__two--button-readmore btn-button-contact" type="submit" value="BOOKING" disabled>    
+                            @else
+                                <input class="btn sesstion__two--button-readmore btn-button-contact" type="submit" value="BOOKING">
+                            @endif
                         </div>
                         @csrf
                     </form>

@@ -17,7 +17,8 @@ class Room extends Model
         'price_sale',
         'thumb',
         'active',
-        'quantity'
+        'quantity',
+        'person'
     ];
 
     public function roomtype(){

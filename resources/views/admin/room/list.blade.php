@@ -11,6 +11,7 @@
                 <th>Price</th>
                 <th>Price_sale</th>
                 <th>Quantity</th>
+                <th>Person</th>
                 <th>Active</th>
                 {{-- <th>Update</th> --}}
                 <th>Feature</th>
@@ -26,6 +27,7 @@
                     <td>{{ $room->price }}</td>
                     <td>{{ $room->price_sale }}%</td>
                     <td>{{ $room->quantity }}</td>
+                    <td>{{ $room->person }}</td>
                     <td>{!! \App\Helpers\Helper::active($room->active) !!}</td>
                     {{-- <td>{{ $room->updated_at }}</td> --}}
                     <td>

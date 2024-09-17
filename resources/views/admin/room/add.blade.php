@@ -41,7 +41,7 @@
             </div>
 
             <div class="row">
-                <div class="col-8">
+                <div class="col-6">
                     <div class="form-group">
                         <label for="file">Images of room </label>
                         <input type="file" class="form-control" id="upload"> 
@@ -55,6 +55,12 @@
                     <div class="form-group">
                         <label >Quantity for room</label>
                         <input type="text" name="quantity" value="{{ old('quantity') }}" class="form-control" id="room" placeholder="Enter quantity...">
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="form-group">
+                        <label >Quantity for person</label>
+                        <input type="text" name="person" value="{{ old('person') }}" class="form-control" id="room" placeholder="Enter person...">
                     </div>
                 </div>
             </div>
