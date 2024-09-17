@@ -1,0 +1,52 @@
+
+
+.booking__field {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.booking__field .form{
+    width: 70%;
+    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+    margin-top: 20px;
+    background-color: #fff;
+}
+.booking{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+}
+.booking input{
+    border: none;
+    border-bottom: 1px solid #373B4D;
+}
+.booking select {
+    padding: 5px;
+}
+.booking__title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.booking__label{
+    color: #373B4D;
+    font-size: 1.0rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+.select__choose--hotel {
+    border-color: var(--corvid-border-color, rgba(var(--brd,248,248,248), 1));
+    border-width: var(--corvid-border-width, var(0px 0px 1px 0px, 2px));
+}
+
+.booking__time--come{
+    display: flex;
+    justify-content: space-between;
+}
+
+.content__booking {
+    margin-bottom: 10px;
+}

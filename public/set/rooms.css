@@ -1,0 +1,146 @@
+
+
+/* Sesstion two for rooms */
+.sesstion__two--list-rooms{
+    margin: 0 10px;
+}
+
+
+.session__two .col__image{
+    position: relative;
+    margin: 0 5px;
+}
+.session__two .product-img-sale{
+    position: absolute;
+    top: 80px;
+    right: 10px;
+    background: #FFB82E;
+    border-radius: 30px;
+    padding: 5px;
+}
+.session__two .col__image:hover{
+    margin-top: 4px;
+}
+.session__two .col__image img{
+    width: 100%;
+    border-radius: 10px;
+}
+.session__two .col__boxText {
+    position: absolute;
+    top: 55%;
+    left: 20%;
+    background-color: #fff;
+    border-radius: 20px;
+    margin: 5px;
+    padding: 10px;
+}
+.session__two .col__boxText--top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.session__two .col__boxText--price {
+    color: #8A777F;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    margin-right: 20px;
+    font-family: "DM Sans", sans-serif;
+}
+.session__two .col__boxText--rating li{
+    color: #FFB606;
+    border: none;
+    margin: 0 2px;
+}
+.session__two .col__boxText--rating{
+    margin-left: 10px;
+}
+.session__two .col__boxText--bottom {
+    margin: 10px 0 10px 0 ;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+.session__two .col__boxText--bottom a{
+    color: #000;
+}
+.session__two .col__button--seemore {
+    position: absolute;
+    top: 40%;
+    left: 20%;
+}
+.session__two .col__button--seemore .col__button--see,
+.session__two .col__button--seemore .col__button--book {
+    padding: 15px;
+    color: #fff;
+    border-radius: 10px;
+    border: none;
+    margin: 0 10px;
+}
+.session__two .col__button--seemore .col__button--see{
+    background-color: #DA2E1A;
+}
+.session__two .col__button--seemore .col__button--book {
+    background-color: #2E2E2E;
+}
+
+.session__two .col__button--seemore .col__button--see:hover, 
+.session__two .col__button--seemore .col__button--book:hover {
+    padding: 18px;
+}
+
+#image__rooms:hover {
+    -webkit-transform: translateX(-50%) translateY(-50%) scale(1.1); 
+    -moz-transform: translateX(-50%) translateY(-50%) scale(1.1);
+    -o-transform: translateX(-50%) translateY(-50%) scale(1.1);
+    transform: translateX(-50%) translateY(-50%) scale(1.1);
+}
+
+#image__rooms {
+	-webkit-transition: all .4s ease-in-out;
+	-moz-transition: all .4s ease-in-out;
+	-o-transition: all .4s ease-in-out;
+	-ms-transition: all .4s ease-in-out;
+}
+
+#image__rooms {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: auto;
+    width: 100%;
+    -webkit-transform: translateX(-50%) translateY(-50%); 
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -o-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+#col__image { 
+    position: relative;
+    height: 450px;
+    width: 450px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+/* Sesstion three for rooms */
+
+/* Button load more */
+.section__three--button-load{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.section__three--button-load a {
+    padding: 15px 20px;
+    background-color: #DA2E1A;
+    color: #fff;
+    border: none;
+    font-weight: 600;
+    border-radius: 10px;
+}
+.section__three--button-load a:hover{
+    background-color: #FFB606;
+    color: #fff;
+    cursor: pointer;
+}
