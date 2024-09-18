@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AmenitiesTypeController;
+use App\Http\Controllers\Admin\AmenityController;
 use App\Http\Controllers\Admin\MainController;
 use App\Http\Controllers\Admin\RoomController;
 use App\Http\Controllers\Admin\RoomtypeController;
@@ -72,14 +73,24 @@ Route::middleware(['auth'])->group(function () {
             Route::DELETE('destroy', [SliderController::class, 'destroy']) ;
         });
 
-        #Amenity
-        Route::prefix('amenities')->group(function () {
+        #AmenityType
+        Route::prefix('amenities_type')->group(function () {
             Route::get('add', [AmenitiesTypeController::class, 'create']) ;
-            Route::post('add', [AmenitiesTypeController::class, 'store'])->name('amenity-add');
-            Route::get('list', [AmenitiesTypeController::class, 'index'])->name('amenity-list');
+            Route::post('add', [AmenitiesTypeController::class, 'store'])->name('amenity_type-add');
+            Route::get('list', [AmenitiesTypeController::class, 'index'])->name('amenity_type-list');
             Route::get('edit/{amenity}', [AmenitiesTypeController::class, 'show']);
             Route::post('edit/{amenity}', [AmenitiesTypeController::class, 'update']);
             Route::DELETE('destroy', [AmenitiesTypeController::class, 'destroy']) ;
+        });
+
+        #Amenity
+        Route::prefix('amenities')->group(function () {
+            Route::get('add', [AmenityController::class, 'create']) ;
+            Route::post('add', [AmenityController::class, 'store'])->name('amenity-add');
+            Route::get('list', [AmenityController::class, 'index'])->name('amenity-list');
+            Route::get('edit/{amenity}', [AmenityController::class, 'show']);
+            Route::post('edit/{amenity}', [AmenityController::class, 'update']);
+            Route::DELETE('destroy', [AmenityController::class, 'destroy']) ;
         });
 
 

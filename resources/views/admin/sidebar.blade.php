@@ -92,6 +92,29 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
+                        <a href="{{ route('amenity_type-add') }}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Add amenity type </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('amenity_type-list') }}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>List amenity type</p>
+                        </a>
+                    </li>                
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                <i class="fa-regular fa-sun"></i>
+                <p>
+                    Amenity
+                    <i class="right fas fa-angle-left"></i>
+                </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
                         <a href="{{ route('amenity-add') }}" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Add amenity </p>
@@ -109,7 +132,7 @@
                 <a href="#" class="nav-link">
                 <i class="fa-solid fa-images"></i>
                 <p>
-                    amenitys
+                    Slider
                     <i class="right fas fa-angle-left"></i>
                 </p>
                 </a>

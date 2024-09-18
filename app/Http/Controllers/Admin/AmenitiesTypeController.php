@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Amenity\AmenityRequest;
-use App\Http\Services\Amenity\AmenityTypeService;
+use App\Http\Requests\AmenityType\AmenityTypeRequest;
+use App\Http\Services\AmenityType\AmenityTypeService;
 use App\Models\AmenitiesType;
 use Illuminate\Http\Request;
 
@@ -18,13 +18,13 @@ class AmenitiesTypeController extends Controller
     }
     public function  create() {
         
-        return view('admin.amenity.add',[
+        return view('admin.amenitytype.add',[
             'title' => 'Add amenity',
             'amenities' => $this->amenity->getParent()
         ]);
     }
 
-    public function store(AmenityRequest $request) {
+    public function store(AmenityTypeRequest $request) {
 
         $this->amenity->create($request);
 
@@ -33,7 +33,7 @@ class AmenitiesTypeController extends Controller
 
     public function index() {
 
-        return view('admin.amenity.list', [
+        return view('admin.amenitytype.list', [
             'title' => 'Amenity list',
             'amenities' => $this->amenity->getAll()
         ]);
@@ -41,17 +41,17 @@ class AmenitiesTypeController extends Controller
 
     public function show(AmenitiesType $amenity) {
 
-        return view('admin.amenity.edit', [
+        return view('admin.amenitytype.edit', [
             'title' => 'Edit Amenity type',
             'amenity' => $amenity,
             'amenities' => $this->amenity->getParent()
         ]);
     }
 
-    public function update(AmenitiesType $amenity, AmenityRequest $request) {
+    public function update(AmenitiesType $amenity, AmenityTypeRequest $request) {
         $this->amenity->update($request, $amenity);
 
-        return redirect('/admin/amenities/list');
+        return redirect('/admin/amenities_type/list');
     }
 
     public function destroy(Request $request) {

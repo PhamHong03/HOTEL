@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Services\Amenity;
+namespace App\Http\Services\AmenityType;
 
 use App\Models\AmenitiesType;
 use Illuminate\Support\Facades\Session;

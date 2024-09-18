@@ -21,10 +21,10 @@
                     <td>{!! \App\Helpers\Helper::active($amenity->active) !!}</td>
                     <td>{{ $amenity->updated_at }}</td>
                     <td>
-                        <a class="btn btn-primary btn-sm" href="/admin/amenities/edit/{{ $amenity->id }}" >
+                        <a class="btn btn-primary btn-sm" href="/admin/amenities_type/edit/{{ $amenity->id }}" >
                             <i class="fa-solid fa-pen-to-square"></i>
                         </a>
-                        <a class="btn btn-danger btn-sm" href ="#" onclick="removeRow({{ $amenity->id }}, '/admin/amenities/destroy')" >
+                        <a class="btn btn-danger btn-sm" href ="#" onclick="removeRow({{ $amenity->id }}, '/admin/amenities_type/destroy')" >
                             <i class="fa-solid fa-trash"></i>
                         </a>
                     </td>

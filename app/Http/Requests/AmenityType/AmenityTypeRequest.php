@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Amenity;
+namespace App\Http\Requests\AmenityType;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class AmenityRequest extends FormRequest
+class AmenityTypeRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,19 +22,14 @@ class AmenityRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required',
-            'price' => 'required',
-            'description' => 'required'
+            'name' => 'required'
         ];
-
     }
 
     public function messages()
     {
         return [
-            'name.required' => 'Please enter name of amenity',
-            'price.required' => 'Please enter price for amenity',
-            'description.required' => 'Please enter description for amenity'
+            'name.required' => 'Please enter name of amenity type'
         ];
     }
 }
