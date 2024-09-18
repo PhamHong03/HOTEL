@@ -12,7 +12,12 @@ class Amenity extends Model
     protected $fillable = [
         'name',
         'price',
+        'amenitytype_id',
         'description',
         'active'
     ];
+    
+    public function amenitytype() {
+        return $this->hasOne(AmenitiesType::class, 'id', 'amenitytype_id');
+    }
 }
