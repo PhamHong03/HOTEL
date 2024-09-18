@@ -333,6 +333,9 @@
                                 <i class="fa-solid fa-phone me-2"></i><input type="text" class="form-control" name="phone" placeholder="Phone number">
                             </div>
                         </div>
+                        <div class="booking__price booking mt-4">
+                            <h3>Total price: {!! \App\Helpers\Helper::price_sal($room->price, $room->price_sale) !!}VND</h3>
+                        </div>
                         <div class=" d-flex ms-3" style="justify-content: center">   
                             @if($room->quantity == 0)
                                 <input class="btn sesstion__two--button-readmore btn-button-contact" type="submit" value="BOOKING" disabled>    
