@@ -26,4 +26,5 @@ class Room extends Model
         return $this->hasOne(Roomtype::class, 'id', 'roomtype_id')
         ->withDefault(['name' => '']);
     }
+
 }

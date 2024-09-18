@@ -13,4 +13,9 @@ class AmenitiesType extends Model
         'parent_id',
         'active'
     ];
+
+    public function amenities() {
+        
+        return $this->hasMany(Amenity::class, 'amenitytype_id', 'id');
+    }
 }

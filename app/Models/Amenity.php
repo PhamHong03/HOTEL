@@ -18,6 +18,7 @@ class Amenity extends Model
     ];
     
     public function amenitytype() {
+        
         return $this->hasOne(AmenitiesType::class, 'id', 'amenitytype_id');
     }
 }

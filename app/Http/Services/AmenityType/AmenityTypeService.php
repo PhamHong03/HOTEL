@@ -54,4 +54,11 @@ class AmenityTypeService {
         }
         return false;
     }
+
+    public function show(){
+
+        return AmenitiesType::where('active', 1)->get();
+
+        
+    }
 }

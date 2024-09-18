@@ -73,4 +73,9 @@ class AmenityService {
         }
         return false;
     }
+
+    public function show() {
+
+        return Amenity::with('amenitytype')
+        ->orderByDesc('id')->paginate(6);    }
 }

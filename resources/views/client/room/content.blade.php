@@ -1,9 +1,8 @@
 @extends('client.homepage')
 
-
 @section('content')
     <h2 class="booking__title mt-3">
-        <span style="color:#000000;" class="booking__title--name">So happy booking with us!
+        <span style="color:#000000;" class="booking__title--name">Book room now!
         </span>
     </h2>
     <div class="container">
@@ -58,6 +57,18 @@
                     @endif
                     
                 </div>
+            </div>
+        </div>
+        <div class="row">
+            <h3 class="content__choose--amenity">About Amenity</h3>
+            <div class="amenity__content">
+                @foreach ($amenities as $amen )
+                    <div class="col-4 choose_amenity">
+                        <h2 class="amenity__content--title" >Type: <b>{{$amen->amenitytype->name }}</b></h2>
+                        <h5 style="color: #DA3C3C">Price: {{ $amen->price }}VND/night</h5>
+                        <span>{!! $amen->description !!}</span>
+                    </div>
+                @endforeach
             </div>
         </div>
         <div class="row mt-5">
@@ -295,12 +306,15 @@
                                 </div>
                             </div>
                         </div>
-                        {{-- <div class="booking__people booking">
-                            <label for="" class="booking__number--title booking__label">Number of person <span class="" style="color: red"> * </span> </label>
-                            <div class="">
-                                <input name="person" id="" class="" type="number" placeholder="Enter a number" required="" aria-required="true" aria-invalid="true" autocomplete="off" value="">
+                        <div class="booking__amenity booking">
+                            <label for="" class="booking__number--title booking__label">Choose amenity <span class="" style="color: red"> * </span> </label>
+                            <div class="d-flex ms-2">
+                                @foreach ($amenities as $amenity )
+                                    <input name="amenity" id="amenity" class="me-2" type="radio" aria-required="true" aria-invalid="true" autocomplete="off" value="{{ $amenity->amenitytype->name }}">
+                                    <label class="me-5" for="amenity">{{ $amenity->amenitytype->name }}</label><br>
+                                @endforeach
                             </div>
-                        </div> --}}
+                        </div>
                         <div class="booking__customer booking">
                             <label for="" class="booking__label">Customer name <span class="" style="color: red"> * </span> </label>
                             <div class="d-flex align-items-center">
