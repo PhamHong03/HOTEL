@@ -107,6 +107,8 @@ Route::get('/contact', [HomeController::class, 'contact'])->name('client-contact
 Route::get('/about', [HomeController::class, 'about'])->name('client-about');
 Route::get('book', [HomeController::class, 'book'])->name('client-book');
 
+//Search
+Route::get('search', [HomeController::class, 'getSearch'])->name('search');
 
 Route::post('/services/load-room', [HomeController::class, 'loadRoom']);
 

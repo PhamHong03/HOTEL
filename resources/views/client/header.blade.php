@@ -46,7 +46,7 @@
             <a href=""><i class="fa-solid fa-bell"></i></a>
         </div> --}}
         <div class="container__layout--four">
-            <a href="{{ route('client-book') }}"><span>RESERVATION</span></a>
+            <a href="{{ route('client-book') }}"><span>CHAT BOX</span></a>
         </div>
         <div class="container__layout--three">
             <a href="{{ route('client-login') }}"><button>Sign in</button></a>
@@ -55,7 +55,7 @@
 
     <div class="header__nav--search mb-2">        
         <div class="container__layout--four nav__search">
-            <form action="" class="input-group ">
+            <form action="{{ route('search') }}" class="input-group ">
                 <input type="text" class="form-control" name="key" placeholder="Input text..." />
                 <div class="input-group-append ms-2">
                     <button class="btn btn-outline-none" type="submit" >

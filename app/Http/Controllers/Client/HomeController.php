@@ -68,8 +68,10 @@ class HomeController extends Controller
         ]);
     }
 
-    // public function room_detail(){
-
-    //     return view('client.detail-room');
-    // }
+    public function getSearch(Request $request) {
+        return view('.client.search', [
+            'title' => 'Rooms are searched',
+            'rooms' => $this->room->search($request)
+        ]);
+   }
 }

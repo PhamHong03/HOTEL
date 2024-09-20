@@ -36,4 +36,11 @@ class RoomService {
             ->limit(6)
             ->get();
     }
+
+    public function search($request) {
+        return Room::where('name', 'like', '%'.$request->key. '%')
+            // ->orwhere('price_sale', $request->key)
+            // ->orwhere('price', $request->key)
+            ->get();            
+    }
 }   

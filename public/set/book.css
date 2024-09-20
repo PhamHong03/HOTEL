@@ -69,14 +69,14 @@
     padding: 20px;
 }
 
-.content__choose--amenity {
-
-}
-
-.amenity__content--title {
-    color: #1FA135;
-}
-
 h5 {
     color: #666;
+}
+
+.amenity__content--title { /* Assuming you have a class named amenity__type */
+    font-family: Georgia, Times New Roman, serif;
+    font-weight: bold;
+    color: #373B4D;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    letter-spacing: 1px;
 }
