@@ -65,7 +65,7 @@
                 @foreach ($amenities as $amen )
                     <div class="col-4 choose_amenity">
                         <h2 class="amenity__content--title" >Type: <b>{{$amen->amenitytype->name }}</b></h2>
-                        <h5 style="color: #DA3C3C">Price: {{ $amen->price }}VND/night</h5>
+                        <h5 style="color: #DA3C3C">Price: {!! \App\Helpers\Helper::amenity_price($amen->price) !!}VND/night</h5>
                         <span>{!! $amen->description !!}</span>
                     </div>
                 @endforeach

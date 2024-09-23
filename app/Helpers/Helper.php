@@ -97,4 +97,9 @@ class Helper {
 
         return $price_sal;
     }
+
+    public static function amenity_price($price) {
+        
+        return number_format($price);
+    }
 }

@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="register__title">
-                <h3>SO HAPPY TO SIGN UP AN ACCOUNT WITH YOU</h3>
+                {{-- <h3>SO HAPPY TO SIGN UP AN ACCOUNT WITH YOU</h3> --}}
                 <span>Please fill full your information</span>
             </div>
         </div>     

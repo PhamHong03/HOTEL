@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="register__title">
-                <h3>LOGIN HERE</h3>
+                {{-- <h3>LOGIN HERE</h3> --}}
                 <span>Please fill full your information</span>
                 
             </div>
