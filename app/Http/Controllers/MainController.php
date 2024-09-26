@@ -27,6 +27,8 @@ class MainController extends Controller
 
     public function order(Request $request) {
 
+        // dd($request->input());
         $this->orderService->addOrder($request);
+        return redirect()->back();
     }
 }

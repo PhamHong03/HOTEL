@@ -549,7 +549,7 @@
                                 @endphp
                                 @foreach ($amenities as $amenity )
                                     
-                                    <input type="hidden" name="price_amenity" value="{{ number_format($amenity->price)}}">
+                                    <input type="hidden" name="price_amenity" value="{{ $amenity->price}}">
                                     @php
                                         $totalPrice = $totalPrice + $amenity->price;
                                     @endphp
@@ -577,7 +577,7 @@
                             </div>
                         </div>
                         <div class="booking__price booking mt-4">
-                            <h3>Total price: {!! \App\Helpers\Helper::price_sal($room->price, $room->price_sale) !!}VND</h3>
+                            <h4>Price room (not amenity): {!! \App\Helpers\Helper::price_sal($room->price, $room->price_sale) !!}VND</h4>
                             {{-- <p>Tổng giá: <span id="total-price">{{ $totalPrice }}</span></p> --}}
                         </div>
                         <div class=" d-flex ms-3" style="justify-content: center">   

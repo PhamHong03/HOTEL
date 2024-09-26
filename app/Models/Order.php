@@ -18,6 +18,7 @@ class Order extends Model
         'time_checkout',
         'quantity_room',
         'price_amenity',
-        'amenities'
+        'amenities',
+        'total_price'
     ];
 }

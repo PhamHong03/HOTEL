@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('time_checkin');
             $table->string('time_checkout');
             $table->integer('quantity_room');
-            $table->integer('price_amenity');
+            $table->unsignedBigInteger('price_amenity');
             $table->string('amenities');
             $table->timestamps();
             $table->foreign('customer_id')->references('id')
