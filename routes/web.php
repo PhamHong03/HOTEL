@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\UploadController;
 use App\Http\Controllers\Admin\Users\LoginController;
 use App\Http\Controllers\Client\HomeController;
+use App\Http\Controllers\MainController as ControllersMainController;
 use App\Http\Controllers\RoomTypeController as ControllersRoomTypeController;
 use App\Http\Controllers\RoomController as ControllersRoomController;
 use App\Http\Controllers\UserController;
@@ -105,7 +106,7 @@ Route::get('/rooms', [HomeController::class, 'rooms'])->name('client-rooms');
 // Route::get('/rooms', [HomeController::class, 'room_detail'])->name('client-detail');
 Route::get('/contact', [HomeController::class, 'contact'])->name('client-contact');
 Route::get('/about', [HomeController::class, 'about'])->name('client-about');
-Route::get('book', [HomeController::class, 'book'])->name('client-book');
+Route::get('book', [HomeController::class, 'book']);
 
 //Search
 Route::get('search', [HomeController::class, 'getSearch'])->name('search');
@@ -114,6 +115,12 @@ Route::post('/services/load-room', [HomeController::class, 'loadRoom']);
 
 Route::get('/category/{id}-{slug}.html', [ControllersRoomTypeController::class, 'index']);
 Route::get('/room/{id}-{slug}.html', [ControllersRoomController::class, 'index'])->name('detail-room');
+Route::get('/room_book/{id}-{slug}.html', [ControllersRoomController::class, 'booking'])->name('client-book');
+
+#order
+Route::get('/order', [ControllersMainController::class, 'order']);
+
+
 #user
 
 Route::get('/login', [UserController::class, 'login'])->name('client-login');

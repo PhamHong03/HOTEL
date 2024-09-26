@@ -34,4 +34,21 @@ class RoomController extends Controller
             'amenities' => $amenity
         ]);
     }
+
+    public function booking($id = '', $slug = ''){
+        
+        $room = $this->roomService->show($id);
+
+        $roomsMore = $this->roomService->more($id);
+
+        $amenity = $this->amenity->show();
+
+ 
+        return view('client.book', [
+            'title' => $room->name,
+            'room' => $room,
+            'amenities' => $amenity
+        ]);
+    }
+
 }

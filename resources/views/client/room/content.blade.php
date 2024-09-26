@@ -71,7 +71,7 @@
                 @endforeach
             </div>
         </div>
-        <div class="row mt-5">
+        {{-- <div class="row mt-5">
             <div class="col-12">
                 <div class="booking__field">
                     <form action=""  class="form">                
@@ -347,7 +347,7 @@
                     </form>
                 </div>
             </div>
-        </div> 
+        </div>  --}}
     </div>
 
 

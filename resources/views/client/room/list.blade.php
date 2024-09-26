@@ -28,7 +28,7 @@
                     
                     <div class="col__button--seemore">
                         <a href="/room/{{ $room->id }}-{{ Str::slug($room->name), '-' }}.html"><button class="col__button--see">SEE MORE</button></a>
-                        <a href="{{ route('client-book') }}"><button class="col__button--book">BOOK NOW</button></a>
+                        <a href="/room_book/{{ $room->id }}-{{ Str::slug($room->name), '-' }}.html"><button class="col__button--book">BOOK NOW</button></a>
                     </div>
                 </div>                
             </div >

@@ -19,5 +19,9 @@ class UserController extends Controller
         ]);
     }
 
+    public function postRegister(Request $request) {
+
+        
+    }
     
 }

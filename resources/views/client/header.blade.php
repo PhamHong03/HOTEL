@@ -45,9 +45,9 @@
             <a href=""><i class="fa-brands fa-square-snapchat"></i></a>
             <a href=""><i class="fa-solid fa-bell"></i></a>
         </div> --}}
-        <div class="container__layout--four">
+        {{-- <div class="container__layout--four">
             <a href="{{ route('client-book') }}"><span>CHAT BOX</span></a>
-        </div>
+        </div> --}}
         <div class="container__layout--three">
             <a href="{{ route('client-login') }}"><button>Sign in</button></a>
         </div>
