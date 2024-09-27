@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AmenitiesTypeController;
 use App\Http\Controllers\Admin\AmenityController;
 use App\Http\Controllers\Admin\MainController;
+use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\RoomController;
 use App\Http\Controllers\Admin\RoomtypeController;
 use App\Http\Controllers\Admin\SliderController;
@@ -94,6 +95,16 @@ Route::middleware(['auth'])->group(function () {
             Route::DELETE('destroy', [AmenityController::class, 'destroy']) ;
         });
 
+        #order
+        Route::get('customers', [OrderController::class,'index']);
+        Route::get('customers/view/{customer}', [OrderController::class, 'show']);
+        Route::post('customers/view/{customer}', [OrderController::class, 'show']);
+
+        Route::get('customers/edit/{customer}', [OrderController::class, 'editCart']);
+        Route::post('customers/edit/{customer}', [OrderController::class, 'update']);
+
+        Route::DELETE('customers/destroy', [OrderController::class, 'destroy'])->name('customers.destroy');
+        Route::post('customers/view/delivery', [OrderController::class, 'delivery'])->name('delivery');
 
     });
 
@@ -124,6 +135,14 @@ Route::get('/order', [ControllersMainController::class, 'order']);
 #user
 
 Route::get('/login', [UserController::class, 'login'])->name('client-login');
+Route::post('/login', [UserController::class, 'postLogin']);
 Route::get('/register', [UserController::class, 'register'])->name('client-register');
+Route::post('/register', [UserController::class, 'postRegister']);
+Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 
+
+
+#email
+
+Route::get('test-email', [MainController::class,'testEmail']);
 

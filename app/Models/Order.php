@@ -21,4 +21,9 @@ class Order extends Model
         'amenities',
         'total_price'
     ];
+
+
+    public function room()  {
+        return $this->hasOne(Room::class, 'id', 'room_id');
+    }
 }

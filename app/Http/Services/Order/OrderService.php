@@ -2,6 +2,7 @@
 
 namespace App\Http\Services\Order;
 
+use App\Jobs\SendMail;
 use App\Models\Customer;
 use App\Models\Order;
 use App\Models\Room;
@@ -26,6 +27,10 @@ class OrderService {
 
             DB::commit();
             Session::flash('success','Order room successful');
+
+            #Queue
+            SendMail::dispatch($request->input('email'))->delay(now()->addSecond(2));
+
         }Catch(\Exception $err) {
             DB::rollBack();
             Session::flash('error', $err->getMessage());
@@ -56,7 +61,7 @@ class OrderService {
         
         foreach ($rooms as $room) {
             $price = $room->price - ($room->price * ($room->price_sale / 100));
-            $totalPrice = intval($price) * intval($stayDay) * intval($request->input('quantity_room')) + intval($request->input('price_amenity'));
+            $totalPrice = (intval($price) * intval($stayDay)) * intval($request->input('quantity_room')) + intval($request->input('price_amenity'));
             
             $data[] = [
                 'customer_id' => $customer_id,
@@ -79,5 +84,23 @@ class OrderService {
         return Order::insert($data); 
     }
     
+    public function getOrder(){
+        
+        return Order::orderByDesc('customer_id')->paginate();
+    }
+    public function getCustomer() {
+        // return Customer::orderByDesc('id')->paginate(9);
+        return Customer::orderByDesc('id')->paginate();
+    }
+    public function getCustomerPaginate() {
+        return Customer::orderByDesc('id')->paginate(9);
+        // return Customer::orderByDesc('id')->paginate();
+    }
+
+    public function getProductForCart($customer) {
+        return $customer->orders()->with(['room' => function($query) {
+            $query->select('id', 'name', 'thumnb');
+        }])->get() ;
+    }
 
 }

@@ -48,8 +48,18 @@
         {{-- <div class="container__layout--four">
             <a href="{{ route('client-book') }}"><span>CHAT BOX</span></a>
         </div> --}}
-        <div class="container__layout--three">
-            <a href="{{ route('client-login') }}"><button>Sign in</button></a>
+        <div class="container__layout--three header__account">
+            {{-- <a href="{{ route('client-login') }}"><button>Sign in</button></a> --}}
+            @if (Auth::check())
+                <i class="me-2 fa-solid fa-user"style="border-radius: 50%; background-color: ; padding:7px 8px" ></i> <b>{{ Auth::user()->name }}</b>
+                <div class="header__account--list">
+                    <button class="button button-white"><a href="">Your profile</a></button>
+                    <button class="button button-white"><a href="">Room order</a></button>
+                    <button class="button button-red"><a href="{{ route('logout') }}">Logout</a></button>
+                </div>
+            @else
+                <a href="{{ route('client-login') }}"><button>Sign in</button></a>
+            @endif                       
         </div>
     </div>  
 

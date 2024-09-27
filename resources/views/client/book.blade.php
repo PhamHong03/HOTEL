@@ -306,7 +306,7 @@
         <div class="row mt-5">
             <div class="col-12">
                 <div class="booking__field">
-                    <form action="/order"  class="form"> 
+                    <form action="/order"  class="form" id="order-room"> 
                         <input type="hidden" name="id_room" value="{{ $room->id }}"> 
                         <input type="hidden" name="price_room" value="{{ \App\Helpers\Helper::price_sal($room->price, $room->price_sale) }}">              
                         <div class="booking__select--hotel booking ">
@@ -618,6 +618,21 @@
             });
         });
     </script>
+
+<script>
+    document.getElementById("order-room").addEventListener("submit", function(event) {
+    //    event.preventDefault(); 
+    if({{ Auth::check() }}){
+        Swal.fire({
+           icon: 'success',
+           text: 'Order successful  ',
+           showConfirmButton: false,
+           timer: 2000
+       });
+    }
+       
+    });
+</script>
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script>
     flatpickr(".date-picker", {

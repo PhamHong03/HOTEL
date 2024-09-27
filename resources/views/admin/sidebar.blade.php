@@ -130,6 +130,23 @@
             </li>
             <li class="nav-item">
                 <a href="#" class="nav-link">
+                <i class="fa-solid fa-people-group"></i>
+                <p>
+                    Order Customer
+                    <i class="right fas fa-angle-left"></i>
+                </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{ route('amenity-add') }}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Customer list </p>
+                        </a>
+                    </li>                
+                </ul>
+            </li>
+            {{-- <li class="nav-item">
+                <a href="#" class="nav-link">
                 <i class="fa-solid fa-images"></i>
                 <p>
                     Slider
@@ -150,7 +167,7 @@
                         </a>
                     </li>                
                 </ul>
-            </li>
+            </li> --}}
         
         </ul>
     </nav>

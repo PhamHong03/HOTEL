@@ -27,22 +27,6 @@
                         <div class="ms-5 text-danger">{{$message}}</div>
                     @enderror
                 </div>
-                <div class="mb-3  align-items-center">
-                    <div class="d-flex align-items-center mt-3">
-                        <i class="fa-solid fa-phone"></i><input type="text" class="form-control" name="phone" placeholder="Phone number">
-                    </div>
-                    @error('phone')
-                        <div class="ms-5 text-danger">{{$message}}</div>
-                    @enderror
-                </div>
-                <div class="mb-3  align-items-center">
-                    <div class="d-flex align-items-center mt-3">
-                        <i class="fa-solid fa-location-dot"></i><input type="text" class="form-control" name="address" placeholder="Address">
-                    </div>
-                    @error('phone')
-                        <div class="ms-5 text-danger">{{$message}}</div>
-                    @enderror
-                </div>
                 <div class="mb-3 align-items-center">
                     <div class="d-flex align-items-center mt-3">
                         <i class="fa-solid fa-key"></i> <input type="password" id="password" class="form-control" name="password" placeholder="Mật khẩu">
