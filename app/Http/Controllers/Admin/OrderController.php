@@ -65,6 +65,7 @@ class OrderController extends Controller
 
         return view('admin.order.list', [
             'title' => 'List order of hotels',
+            // 'customers' => $customer,
             'orders' => $orders
         ]) ;
     }

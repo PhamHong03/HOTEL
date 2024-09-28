@@ -108,7 +108,7 @@ Route::middleware(['auth'])->group(function () {
 
         #order
 
-        Route::get('/orders', [OrderController::class, 'index_order']);
+        Route::get('/orders', [OrderController::class, 'index_order'])->name('order-list');
 
 
     });

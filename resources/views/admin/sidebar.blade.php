@@ -145,6 +145,23 @@
                     </li>                
                 </ul>
             </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                <i class="fa-brands fa-first-order-alt"></i>
+                <p>
+                    Orders
+                    <i class="right fas fa-angle-left"></i>
+                </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{ route('order-list') }}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Orders list </p>
+                        </a>
+                    </li>                
+                </ul>
+            </li>
             {{-- <li class="nav-item">
                 <a href="#" class="nav-link">
                 <i class="fa-solid fa-images"></i>
