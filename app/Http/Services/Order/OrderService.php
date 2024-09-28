@@ -97,10 +97,28 @@ class OrderService {
         // return Customer::orderByDesc('id')->paginate();
     }
 
-    public function getProductForCart($customer) {
+    public function getProductForOrder($customer) {
+
         return $customer->orders()->with(['room' => function($query) {
-            $query->select('id', 'name', 'thumnb');
+            $query->select('id', 'name', 'thumb', 'price', 'price_sale');
         }])->get() ;
     }
+    public function update2($request, $customer){
+        // dd($request);
+        try{
+            
+            $customer->status = $request->input('status');
+            $customer->save();
+            Session::flash('success', 'Update successfully');
+        }catch(\Exception $err) {
+            dd($err);
+            Session::flash('error', 'Error for udpate');
 
+            Log::info($err->getMessage());
+
+            return false;
+        }
+        return true;
+    }
+ 
 }

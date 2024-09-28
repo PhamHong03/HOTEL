@@ -91,9 +91,11 @@ header{
     border:0 ;
     padding:10px 17px;
     color: #fff;
-    background-color: #da3c3c;
     border-radius: 20px;
 
+}
+.btn-sign-in{
+    background-color: #da3c3c;
 }
 .header__container .container__layout--five a i {
     font-size: 1.6rem;

@@ -58,7 +58,7 @@
                     <button class="button button-red"><a href="{{ route('logout') }}">Logout</a></button>
                 </div>
             @else
-                <a href="{{ route('client-login') }}"><button>Sign in</button></a>
+                <a href="{{ route('client-login') }}"><button class="btn-sign-in">Sign in</button></a>
             @endif                       
         </div>
     </div>  

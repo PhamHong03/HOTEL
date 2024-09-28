@@ -11,11 +11,13 @@ class OrderController extends Controller
 {
     protected $orderService;
 
+    // construction for order service
     public function __construct(OrderService $orderService)
     {
         $this->orderService = $orderService;
     }
 
+    //list customers 
     public function index() {
 
         return view('admin.order.customer', [
@@ -24,13 +26,46 @@ class OrderController extends Controller
         ]);
     }
 
+    //show order of customer
     public function show(Customer $customer){
-        $carts = $this->orderService->getProductForCart($customer);
+        $orders = $this->orderService->getProductForOrder($customer); // get room from order of customer
   
-        // return view('admin.cart.detail', [
-        //     'title' => 'Chi Tiết Đơn Hàng : ' .$customer->name,
-        //     'customers' => $customer,
-        //     'carts' => $carts          
-        // ]);
+        // dd($orders);
+        return view('admin.order.detail', [
+            'title' => 'Order details for : ' .$customer->name,
+            'customers' => $customer,
+            'orders' => $orders          
+        ]);
+    }
+
+    //edit and update order of customer
+    public function editOrder(Customer $customer){
+        $orders = $this->orderService->getProductForOrder($customer);
+  
+        return view('admin.order.edit', [
+            'title' => 'Order details for : ' .$customer->name,
+            'customers' => $customer,
+            'orders' => $orders          
+        ]);
+    }
+
+    public function update(Request $request, Customer $customer){
+        $result = $this->orderService->update2($request, $customer);
+      
+        if($result) {
+            return redirect('/admin/customers');
+        }
+        return redirect()->back();
+    }
+
+    // ORDER 
+
+    public function index_order() {
+        $orders = $this->orderService->getOrder();
+
+        return view('admin.order.list', [
+            'title' => 'List order of hotels',
+            'orders' => $orders
+        ]) ;
     }
 }

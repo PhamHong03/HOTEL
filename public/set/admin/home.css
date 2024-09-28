@@ -71,3 +71,20 @@
   z-index: 999 !important;
   color: var(--black);
 }
+
+
+
+.cart__admin{
+  margin-left: 20px;    
+  margin-right: 20px;
+  border-top: 2px solid green;
+}
+.table_admin{
+  border: 2px solid green;
+}
+
+.change_status select{
+  background-color: pink;
+  border-radius: 10px;
+  padding: 15px 20px;
+}

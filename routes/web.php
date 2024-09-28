@@ -95,16 +95,21 @@ Route::middleware(['auth'])->group(function () {
             Route::DELETE('destroy', [AmenityController::class, 'destroy']) ;
         });
 
-        #order
-        Route::get('customers', [OrderController::class,'index']);
+        #customers
+        Route::get('customers', [OrderController::class,'index'])->name('customer-list');
         Route::get('customers/view/{customer}', [OrderController::class, 'show']);
         Route::post('customers/view/{customer}', [OrderController::class, 'show']);
 
-        Route::get('customers/edit/{customer}', [OrderController::class, 'editCart']);
+        Route::get('customers/edit/{customer}', [OrderController::class, 'editOrder']);
         Route::post('customers/edit/{customer}', [OrderController::class, 'update']);
 
         Route::DELETE('customers/destroy', [OrderController::class, 'destroy'])->name('customers.destroy');
         Route::post('customers/view/delivery', [OrderController::class, 'delivery'])->name('delivery');
+
+        #order
+
+        Route::get('/orders', [OrderController::class, 'index_order']);
+
 
     });
 

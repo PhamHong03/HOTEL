@@ -32,6 +32,10 @@
                             <strong style="color: green">                                
                                 Confirmed
                             </strong>                   
+                        @elseif($customer->status == 2)
+                            <strong style="color: orangered">                                
+                                Cancel
+                            </strong>                   
                         @endif  
                     </td>
                     <td>

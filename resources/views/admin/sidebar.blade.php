@@ -132,13 +132,13 @@
                 <a href="#" class="nav-link">
                 <i class="fa-solid fa-people-group"></i>
                 <p>
-                    Order Customer
+                    Customer
                     <i class="right fas fa-angle-left"></i>
                 </p>
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="{{ route('amenity-add') }}" class="nav-link">
+                        <a href="{{ route('customer-list') }}" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Customer list </p>
                         </a>
