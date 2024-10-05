@@ -32,14 +32,10 @@ Route::get('admin/users/login',[LoginController::class, 'index'])->name('login')
 Route::post('admin/users/login/store',[LoginController::class, 'store']);
 
 Route::middleware(['auth'])->group(function () {
-
     Route::prefix('admin')->group(function () {
-
         Route::get('/', [MainController::class,'index'])->name('admin');
         Route::get('/home', [MainController::class,'home'])->name('home_admin');
-
-        Route::get('main', [MainController::class,'index']);
-    
+        Route::get('main', [MainController::class,'index']);   
     
         #Roomtypes
         Route::prefix('roomtypes')->group(function () {
@@ -50,8 +46,7 @@ Route::middleware(['auth'])->group(function () {
             Route::post('edit/{roomtype}', [RoomtypeController::class, 'update']);
             Route::DELETE('destroy', [RoomtypeController::class, 'destroy']) ;
         });
-        
-        
+                
         #Rooms
         Route::prefix('rooms')->group(function () {
             Route::get('add', [RoomController::class, 'create']) ;
@@ -99,24 +94,17 @@ Route::middleware(['auth'])->group(function () {
         Route::get('customers', [OrderController::class,'index'])->name('customer-list');
         Route::get('customers/view/{customer}', [OrderController::class, 'show']);
         Route::post('customers/view/{customer}', [OrderController::class, 'show']);
-
         Route::get('customers/edit/{customer}', [OrderController::class, 'editOrder']);
         Route::post('customers/edit/{customer}', [OrderController::class, 'update']);
-
         Route::DELETE('customers/destroy', [OrderController::class, 'destroy'])->name('customers.destroy');
         Route::post('customers/view/delivery', [OrderController::class, 'delivery'])->name('delivery');
 
         #order
-
         Route::get('/orders', [OrderController::class, 'index_order'])->name('order-list');
-
-
     });
-
 });
 
 #client
-
 Route::get('/', [HomeController::class, 'index'])->name('client-home');
 Route::get('/rooms', [HomeController::class, 'rooms'])->name('client-rooms');
 // Route::get('/rooms', [HomeController::class, 'room_detail'])->name('client-detail');
@@ -126,9 +114,7 @@ Route::get('book', [HomeController::class, 'book']);
 
 //Search
 Route::get('search', [HomeController::class, 'getSearch'])->name('search');
-
 Route::post('/services/load-room', [HomeController::class, 'loadRoom']);
-
 Route::get('/category/{id}-{slug}.html', [ControllersRoomTypeController::class, 'index']);
 Route::get('/room/{id}-{slug}.html', [ControllersRoomController::class, 'index'])->name('detail-room');
 Route::get('/room_book/{id}-{slug}.html', [ControllersRoomController::class, 'booking'])->name('client-book');
@@ -136,18 +122,15 @@ Route::get('/room_book/{id}-{slug}.html', [ControllersRoomController::class, 'bo
 #order
 Route::get('/order', [ControllersMainController::class, 'order']);
 
-
 #user
-
 Route::get('/login', [UserController::class, 'login'])->name('client-login');
 Route::post('/login', [UserController::class, 'postLogin']);
 Route::get('/register', [UserController::class, 'register'])->name('client-register');
 Route::post('/register', [UserController::class, 'postRegister']);
 Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 
-
-
 #email
-
 Route::get('test-email', [MainController::class,'testEmail']);
 
+#detail order customer
+Route::get('/order-detail-customer', [ControllersMainController::class, 'order_detail_customer'])->name('order_detail_customer');

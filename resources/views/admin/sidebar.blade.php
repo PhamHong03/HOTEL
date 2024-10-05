@@ -13,9 +13,15 @@
         <div class="image">
         <img src="/template/admin/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
-        <div class="info">
-        <a href="#" class="d-block">Administrator</a>
-        </div>
+        <div class="info d-flex">
+            @if (Auth::check())
+                <a href="#" class="d-block">{{ Auth::user()->name }}</a>    
+                <a href="" class="d-block " style="margin-left: 10px">Đăng xuất</a>
+            @else
+          
+            @endif
+            
+          </div>
     </div>
 
     <!-- SidebarSearch Form -->

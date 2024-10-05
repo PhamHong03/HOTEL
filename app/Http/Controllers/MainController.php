@@ -7,7 +7,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Services\Order\OrderService;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
 
 class MainController extends Controller
 {
@@ -30,5 +30,16 @@ class MainController extends Controller
         // dd($request->input());
         $this->orderService->addOrder($request);
         return redirect()->back();
+    }
+
+    public function order_detail_customer(){
+        $order = $this->orderService->getOrder();
+        $users = Auth::user();
+        return view('client.order.detail', [
+            'title' => 'Order Detail',
+            'customers' => $this->orderService->getCustomer(),
+            'orders' => $order,
+            'users' => $users
+        ]); 
     }
 }
